@@ -29,7 +29,12 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-
+      - name: print env
+        run: |
+          echo "${{github.event}}"
+          echo "${{github.event_name}}"
+          echo "${{github.event.repository}}"
+          
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -39,7 +44,6 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          echo ${{github.event}}
           docker rmi `docker images -q`
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* adoptopenjdk* mysql* php* mongodb* dotnet* moby* snapd* || true
@@ -231,7 +235,7 @@ jobs:
           path: ./artifact/firmware/
 
       - name: Upload release asset
-        if: github.event == 'release'
+        if: github.event_name == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.LEDE_TOKEN }}
