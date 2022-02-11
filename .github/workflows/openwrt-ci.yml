@@ -29,12 +29,6 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-      - name: print env
-        run: |
-          echo "${{github.event}}"
-          echo "${{github.event_name}}"
-          echo "${{github.event.repository}}"
-          
       - name: Checkout
         uses: actions/checkout@v2
         with:
