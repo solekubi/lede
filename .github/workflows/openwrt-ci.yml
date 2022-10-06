@@ -73,7 +73,7 @@ jobs:
       - name: Generate configuration file
         run: |
           rm -f ./.config*
-          cp $GITHUB_WORKSPACE/Configs/$CONFIG_FILE .config
+          cp $GITHUB_WORKSPACE/config/$CONFIG_FILE .config
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
 
