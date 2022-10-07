@@ -94,6 +94,7 @@ jobs:
           du -h ./ --max-depth=1
           du -h /mnt/openwrt/ --max-depth=1 || true
           [ "$?" == 0 ] && echo "Compile_Result=true" >> $GITHUB_ENV || echo "Compile_Result=false" >> $GITHUB_ENV
+          echo "BUILD_DATA=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
           
       - name: Prepare artifact
         run: |
@@ -133,5 +134,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./artifact/firmware/*
           file_glob: true
-          tag: Latest
+          tag: env.BUILD_DATA
           overwrite: true
