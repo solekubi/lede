@@ -72,9 +72,10 @@ jobs:
 
       - name: Generate configuration file
         run: |
-          rm -f ./.config*
+          rm -f .config*
           cp $GITHUB_WORKSPACE/config/$CONFIG_FILE .config
-          sed -i 's/^[ \t]*//g' ./.config
+          sed -i 's/^[ \t]*//g' .config
+          cat .config
           make defconfig
 
       - name: Make download
@@ -134,5 +135,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./artifact/firmware/*
           file_glob: true
-          tag: env.BUILD_DATA
+          tag: ${{ env.BUILD_DATA }}
           overwrite: true
