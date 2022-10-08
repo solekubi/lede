@@ -93,8 +93,8 @@ CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
 
 # 主题包
 CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-theme-material=y
-# CONFIG_PACKAGE_luci-theme-netgear=y
+# CONFIG_PACKAGE_luci-theme-material=y
+CONFIG_PACKAGE_luci-theme-netgear=y
 
 # Other Appliciations
 CONFIG_PACKAGE_golang=y
