@@ -16,7 +16,7 @@ CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 # CONFIG_PACKAGE_6to4=y
 
 # Wireless 驱动程序(开源)
-# CONFIG_PACKAGE_kmod-mt76=y
+CONFIG_PACKAGE_kmod-mt76=y
 
 # LUCI Appliciations
 # CONFIG_PACKAGE_luci-app-accesscontrol=y
@@ -83,8 +83,8 @@ CONFIG_PACKAGE_luci-app-guest-wifi=y
 # CONFIG_PACKAGE_luci-app-dawn is not set
 # CONFIG_PACKAGE_luci-app-zerotier=y
 CONFIG_PACKAGE_luci-ssl-openssl=y
-# CONFIG_PACKAGE_luci-app-diskman=y
-# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
 
 # Usb
 # CONFIG_PACKAGE_kmod-usb-storage=y
@@ -97,7 +97,7 @@ CONFIG_PACKAGE_luci-theme-material=y
 # CONFIG_PACKAGE_luci-theme-netgear=y
 
 # Other Appliciations
-# CONFIG_PACKAGE_golang=y
+CONFIG_PACKAGE_golang=y
 CONFIG_PACKAGE_bash=y
 CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_davfs2=y
